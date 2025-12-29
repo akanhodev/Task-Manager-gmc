@@ -1,6 +1,6 @@
-import { Task, TaskFilter } from '@/types/task';
-import { TaskItem } from './TaskItem';
-import { ClipboardList } from 'lucide-react';
+import { Task, TaskFilter } from "@/types/task";
+import { TaskItem } from "./TaskItem";
+import { ClipboardList } from "lucide-react";
 
 interface TaskListProps {
   /** Array of tasks to display */
@@ -29,9 +29,9 @@ export function TaskList({
   // Filter tasks based on selected filter
   const filteredTasks = tasks.filter((task) => {
     switch (filter) {
-      case 'active':
+      case "active":
         return !task.completed;
-      case 'completed':
+      case "completed":
         return task.completed;
       default:
         return true;
@@ -54,14 +54,14 @@ export function TaskList({
           <ClipboardList className="h-8 w-8 text-muted-foreground" />
         </div>
         <h3 className="font-semibold text-foreground mb-1">
-          {filter === 'all' && 'No tasks yet'}
-          {filter === 'active' && 'No active tasks'}
-          {filter === 'completed' && 'No completed tasks'}
+          {filter === "all" && "No tasks yet"}
+          {filter === "active" && "No active tasks"}
+          {filter === "completed" && "No completed tasks"}
         </h3>
         <p className="text-sm text-muted-foreground">
-          {filter === 'all' && 'Add your first task using the form above'}
-          {filter === 'active' && 'All tasks have been completed!'}
-          {filter === 'completed' && "You haven't completed any tasks yet"}
+          {filter === "all" && "Add your first task using the form above"}
+          {filter === "active" && "All tasks have been completed!"}
+          {filter === "completed" && "You haven't completed any tasks yet"}
         </p>
       </div>
     );
